@@ -119,7 +119,7 @@ app.post('/chat', async (req, res) => {
         'Authorization': `Bearer ${GROQ_API_KEY}`,
       },
       body: JSON.stringify({
-        model: 'llama-3.1-8b-instant',
+        model: 'gemma2-9b-it',
         messages: [
           { role: 'system', content: SYSTEM_PROMPT },
           ...messages,
