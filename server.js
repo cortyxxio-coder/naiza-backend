@@ -5,7 +5,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const GROQ_API_KEY = process.env.GROQ_API_KEY;
+const GROQ_API_KEY = "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";
 
 const SYSTEM_PROMPT = `You are Naiza, the official AI customer support assistant for PoketStor.
 PoketStor is a free India-wide local commerce platform operated by Nexus Ventures LLC.
