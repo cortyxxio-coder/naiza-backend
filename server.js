@@ -135,3 +135,18 @@ app.post('/chat', async (req, res) => {
       console.error('Groq error:', JSON.stringify(data));
       return res.status(500).json({ error: 'Groq API error', details: data });
     }
+const reply = data.choices?.[0]?.message?.content ||
+      "Sorry, I couldn't get a response. Please try again.";
+
+    res.json({ reply });
+
+  } catch (err) {
+    console.error('Chat error:', err);
+    res.status(500).json({ error: 'Something went wrong. Please try again.' });
+  }
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Naiza backend running on port ${PORT}`);
+});
